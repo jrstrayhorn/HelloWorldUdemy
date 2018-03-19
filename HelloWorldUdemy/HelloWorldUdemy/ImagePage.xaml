@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HelloWorldUdemy.MarkupExtensions"
+             x:Class="HelloWorldUdemy.ImagePage" BackgroundColor="Black">
+    <!--Loading from URL with Loading Indicator<AbsoluteLayout>
+        <ActivityIndicator IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}" Color="White"
+            AbsoluteLayout.LayoutBounds="0.5,0.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional"   />
+        <Image x:Name="image" Aspect="AspectFill"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>-->
+    <!--<Image Source="{local:EmbeddedImage HelloWorldUdemy.Images.background.jpg}" x:Name="image" Aspect="AspectFill" />-->
+    <!--<Button Image="clock.png" x:Name="btn" />-->
+    <Button x:Name="btn">
+        <Button.Image>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="Android" Value="clock.png"/>
+                <On Platform="iOS" Value="clock.png"/>
+            </OnPlatform>
+        </Button.Image>
+    </Button>
+</ContentPage>
