@@ -27,7 +27,8 @@ namespace HelloWorldUdemy
             //MainPage = new MyTabbedPage();
             //MainPage = new DemoPopUpPage();
             //MainPage = new NavigationPage(new DemoToolbarPage());
-            MainPage = new NavigationPage(new InstagramExMainPage());
+            //MainPage = new NavigationPage(new InstagramExMainPage());
+            MainPage = new DemoFormsPage();
 		}
 
 		protected override void OnStart ()
