@@ -19,7 +19,10 @@ namespace HelloWorldUdemy
 
         async void Handle_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new IntroductionPage());
+            //await Navigation.PushAsync(new IntroductionPage());
+
+            // Do open a modal with the page
+            await Navigation.PushModalAsync(new IntroductionPage());
         }
 	}
 }

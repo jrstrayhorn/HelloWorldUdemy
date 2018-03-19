@@ -19,13 +19,16 @@ namespace HelloWorldUdemy
 
         async void Handle_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            //await Navigation.PopAsync();
+
+            // to handle back button in modal
+            await Navigation.PopModalAsync();
         }
 
         protected override bool OnBackButtonPressed()
         {
             //return base.OnBackButtonPressed();
-            return true; // will disable the back button functionality
+            return true; // will disable the back button functionality on Android or Win
         }
     }
 }

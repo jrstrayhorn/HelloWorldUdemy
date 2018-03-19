@@ -18,11 +18,16 @@ namespace HelloWorldUdemy
             //MainPage = new DemoImageCircle();
             //MainPage = new DemoBasicList();
             //MainPage = new ListExercise();
-            MainPage = new NavigationPage(new WelcomePage())
+            /*MainPage = new NavigationPage(new WelcomePage())
             {
                 BarBackgroundColor = Color.Gray,
                 BarTextColor = Color.White
-            };
+            };*/
+            //MainPage = new NavigationPage(new ContactsPage());
+            //MainPage = new MyTabbedPage();
+            //MainPage = new DemoPopUpPage();
+            //MainPage = new NavigationPage(new DemoToolbarPage());
+            MainPage = new NavigationPage(new InstagramExMainPage());
 		}
 
 		protected override void OnStart ()
