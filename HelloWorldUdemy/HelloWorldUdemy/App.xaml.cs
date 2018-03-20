@@ -28,7 +28,8 @@ namespace HelloWorldUdemy
             //MainPage = new DemoPopUpPage();
             //MainPage = new NavigationPage(new DemoToolbarPage());
             //MainPage = new NavigationPage(new InstagramExMainPage());
-            MainPage = new DemoFormsPage();
+            //MainPage = new NavigationPage(new DemoFormsPage());
+            MainPage = new NavigationPage(new ContactBookExercise());
 		}
 
 		protected override void OnStart ()

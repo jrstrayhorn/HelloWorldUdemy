@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage Padding="40" xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:HelloWorldUdemy.Extensions"
              x:Class="HelloWorldUdemy.DemoFormsPage">
-    <StackLayout>
+             <!--
+    <StackLayout>-->
         <!-- Programmtically control toggle
         <Switch IsToggled="True" Toggled="Handle_Toggled" />
         <Label Text="Content" x:Name="label" />
@@ -11,7 +14,57 @@
         <Switch IsToggled="True" x:Name="switch" />
         <Label Text="Content" IsVisible="{Binding Source={x:Reference switch}, Path=IsToggled}" />
         -->
+        <!-- Slider Example
         <Slider x:Name="slider" Maximum="255" Minimum="10" Value="50" ValueChanged="Handle_ValueChanged" />
         <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0}'}" />
-    </StackLayout>
+        -->
+        <!-- Stepper Example
+        <Stepper x:Name="stepper" Increment="5" />
+        <Label Text="{Binding Source={x:Reference stepper}, Path=Value}" />
+        -->
+        <!-- Entry and Editor Example
+        <Entry Keyboard="Numeric" Placeholder="Phone" TextChanged="Handle_TextChanged" />
+        <Entry IsPassword="true" Completed="Handle_Completed" />
+        <Label x:Name="label" />
+        <Editor BackgroundColor="Gray" VerticalOptions="FillAndExpand" />
+        -->
+        <!-- Picker Example (Drop Down)
+        <Picker x:Name="picker" Title="Contact Method" SelectedIndexChanged="Handle_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>SMS</x:String>
+                <x:String>Email</x:String>
+            </Picker.Items>
+        </Picker>
+        -->
+        <!-- Date and Time Picker Example
+        <DatePicker Date="{x:Static sys:DateTime.Today}" Format="d MMM yyyy" DateSelected="Handle_DateSelected" />
+        <TimePicker Time="13:00" />
+        -->
+      <!--  
+    </StackLayout>-->
+    <!-- TableView Example (used to create forms) -->
+    <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Basics">
+                    <TextCell Text="Name" Detail="JR Strayhorn" />
+                    <EntryCell Label="Title" Placeholder="(eg Shopping)" />
+                    <SwitchCell Text="Notifications" On="true" />
+                    <local:DateCell Label="Starts" />
+                    <local:DateCell Label="Ends" />
+                    <ViewCell Tapped="Handle_Tapped">
+                        <StackLayout Orientation="Horizontal" Padding="13, 5">
+                            <Label Text="Contact Method" VerticalOptions="Center" />
+                            <Label
+                                x:Name="contactMethod"
+                                VerticalOptions="Center"
+                                HorizontalOptions="EndAndExpand"
+                                Text="None"
+                                TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+    </TableView>
+
+    
 </ContentPage>

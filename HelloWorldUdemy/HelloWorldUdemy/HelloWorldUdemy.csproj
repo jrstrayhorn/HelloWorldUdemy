@@ -24,6 +24,15 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Update="ContactMethodsPage.xaml.cs">
+      <DependentUpon>ContactMethodsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ContactBookExercise.xaml.cs">
+      <DependentUpon>ContactBookExercise.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContactBookDetailsPage.xaml.cs">
+      <DependentUpon>ContactBookDetailsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -117,5 +126,9 @@
     <EmbeddedResource Update="WelcomePageLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
