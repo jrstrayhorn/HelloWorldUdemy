@@ -9,6 +9,9 @@ namespace HelloWorldUdemy
 {
 	public partial class App : Application
 	{
+        private const string TitleKey = "Name";
+        private const string NotificationsEnabledKey = "NotificationsEnabled";
+
 		public App ()
 		{
 			InitializeComponent();
@@ -29,7 +32,9 @@ namespace HelloWorldUdemy
             //MainPage = new NavigationPage(new DemoToolbarPage());
             //MainPage = new NavigationPage(new InstagramExMainPage());
             //MainPage = new NavigationPage(new DemoFormsPage());
-            MainPage = new NavigationPage(new ContactBookExercise());
+            //MainPage = new NavigationPage(new ContactBookExercise());
+            //MainPage = new DemoDataAccess();
+            MainPage = new DemoRESTPage();
 		}
 
 		protected override void OnStart ()
@@ -46,5 +51,29 @@ namespace HelloWorldUdemy
 		{
 			// Handle when your app resumes
 		}
+
+        public string Title {
+            get {
+                if (Properties.ContainsKey(TitleKey))
+                    return Properties[TitleKey].ToString();
+
+                return "";
+            }
+            set {
+                Properties[TitleKey] = value;
+            }
+        }
+
+        public bool NotificationsEnabled {
+            get {
+                if (Properties.ContainsKey(NotificationsEnabledKey))
+                    return (bool)Properties[NotificationsEnabledKey];
+
+                return false;
+            }
+            set {
+                Properties[NotificationsEnabledKey] = value;
+            }
+        }
 	}
 }
